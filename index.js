@@ -2,8 +2,14 @@
 //Elementos HTML
 const contenedorPrincipalTarjetas = document.querySelector(".contenedor-conjunto-tarjetas")
 const contenedorTarjetaTrago = document.querySelector(".contenedor-tarjeta-trago")
-const formularioBusqueda = document.querySelector(".formulario-busqueda")
+const formularioBusquedaNombre = document.querySelector(".formulario-busqueda-nombre")
+const formularioBusquedaIngrediente = document.querySelector(".formulario-busqueda-ingrediente")
 const formularioFiltro = document.querySelector(".formulario-filtro")
+
+const inputBusquedaNombre = document.querySelector("#input-busqueda-nombre")
+const inputBusquedaIngrediente = document.querySelector("#input-busqueda-ingrediente")
+const botonTragoAleatorio = document.querySelector("#boton-trago-aleatorio")
+
 
 // Funciones
 
@@ -92,6 +98,38 @@ const mostrarTrago = (id) => {
 
 // Formulario de busqueda
 
-// formularioNuevoUsuario.onsubmit = (e) => {
-//     e.preventDefault()
-// }
+formularioBusquedaNombre.onsubmit = (e) => {
+    e.preventDefault()
+
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputBusquedaNombre.value}`)
+    .then((res) =>  res.json())
+    .then((data) => {
+    console.log(data.drinks)
+    htmlConjuntoTarjetas(data.drinks)
+    })
+}
+
+
+
+formularioBusquedaIngrediente.onsubmit = (e) => {
+    e.preventDefault()
+
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputBusquedaIngrediente.value}`)
+    .then((res) =>  res.json())
+    .then((data) => {
+    console.log(data.drinks)
+    htmlConjuntoTarjetas(data.drinks)
+    })
+}
+
+botonTragoAleatorio.onclick = () => {
+  
+    fetch()
+    .then((res) =>  res.json())
+    .then((data) => {
+    console.log(data.drinks)
+    htmlConjuntoTarjetas(data.drinks)
+    })
+
+}
+
