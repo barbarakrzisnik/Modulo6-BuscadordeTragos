@@ -4,3 +4,5 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
 .then((data) => {
     console.log(data.drinks)
 })
+
+
