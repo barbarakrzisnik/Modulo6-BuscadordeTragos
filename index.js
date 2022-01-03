@@ -1,7 +1,9 @@
 
 //Elementos HTML
 const contenedorPrincipalTarjetas = document.querySelector(".contenedor-conjunto-tarjetas")
-
+const contenedorTarjetaTrago = document.querySelector(".contenedor-tarjeta-trago")
+const formularioBusqueda = document.querySelector(".formulario-busqueda")
+const formularioFiltro = document.querySelector(".formulario-filtro")
 
 // Funciones
 
@@ -35,11 +37,61 @@ const botonVerMas = () => {
         botonesVerMas[i].onclick = () => {
        const idTrago = botonesVerMas[i].dataset.id
        console.log(idTrago)
-    //    mostrarTrago(idTrago)
+       mostrarTrago(idTrago)
 }}}
 
-fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
-.then((res) =>  res.json())
-.then((data) => {
-    console.log(data.drinks)
-})
+
+// Tarjeta individual
+
+const htmlTarjetaTrago = (data) => {
+
+    contenedorTarjetaTrago.style.display = "block"
+    console.log(data)
+    const html = `
+        <div class="tarjeta-info-trago">
+            <img src="${data.strDrinkThumb}">
+            <div>
+                <h2>${data.strDrink}</h2>
+                <h3>Category: ${data.strCategory}</h3>
+                <h3>Glass: ${data.strGlass}</h3>
+                <ul>
+                    <h3>Ingredients</h3>
+                    <li>${data.strIngredient1}</li>
+                    <li>${data.strIngredient2}</li>
+                    <li>${data.strIngredient3}</li>
+                    <li>${data.strIngredient4}</li>
+                </ul>
+                <h3>Instructions</h3>
+                <p>${data.strInstructions}</p>
+            <button class="boton-volver">Volver</button>
+            </div>
+        </div>
+    `
+
+    contenedorTarjetaTrago.innerHTML = html
+
+    const botonVolver = document.querySelector(".boton-volver")
+
+    botonVolver.onclick = () => {
+     contenedorTarjetaTrago.style.display = "none"
+     contenedorPrincipalTarjetas.style.display = "block"
+    }
+}
+
+const mostrarTrago = (id) => {
+    contenedorPrincipalTarjetas.style.display = "none"
+
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
+    .then((res) =>  res.json())
+    .then((data) => {
+    console.log(data)
+    htmlTarjetaTrago(data.drinks[0])
+    })
+}
+
+
+// Formulario de busqueda
+
+// formularioNuevoUsuario.onsubmit = (e) => {
+//     e.preventDefault()
+// }
