@@ -129,6 +129,5 @@ botonTragoAleatorio.onclick = () => {
     .then((data) => {
     mostrarTrago(data.drinks[0].idDrink)
     })
-
 }
 
