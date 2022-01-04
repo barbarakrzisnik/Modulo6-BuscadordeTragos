@@ -11,15 +11,19 @@
     <h1>Make ur drink</h1>
 </header>
 <nav>
-    <form class="formulario-busqueda">
+    <form class="formulario-busqueda-nombre">
         <label>Search by drink
-            <input type="text">
+            <input type="text" id="input-busqueda-nombre">
         </label>
-        <label>by ingredient
-            <input type="text">
-        </label>
-        <button>Surprise me!</button>
     </form>
+    <form class="formulario-busqueda-ingrediente">
+        <label>Search by ingredient
+            <input type="text" id="input-busqueda-ingrediente">
+        </label>
+    </form>
+
+    <button id="boton-trago-aleatorio">Surprise me!</button>
+
     <form class="formulario-filtro">
         <label>Filter by Alcoholic
             <input type="checkbox">
