@@ -15,12 +15,15 @@ const botonTragoAleatorio = document.querySelector("#boton-trago-aleatorio")
 
 // Tarjetas menu principal
 
+const armarInicio = () => {
 fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
 .then((res) =>  res.json())
 .then((data) => {
     console.log(data.drinks)
     htmlConjuntoTarjetas(data.drinks)
 })
+}
+armarInicio()
 
 
 const htmlConjuntoTarjetas = (data) => {
@@ -130,4 +133,3 @@ botonTragoAleatorio.onclick = () => {
     mostrarTrago(data.drinks[0].idDrink)
     })
 }
-
