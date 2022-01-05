@@ -9,6 +9,11 @@ const formularioFiltro = document.querySelector(".formulario-filtro")
 const inputBusquedaNombre = document.querySelector("#input-busqueda-nombre")
 const inputBusquedaIngrediente = document.querySelector("#input-busqueda-ingrediente")
 const botonTragoAleatorio = document.querySelector("#boton-trago-aleatorio")
+const botonVolverDeBusqueda = document.querySelector("#volver-de-busqueda")
+
+const checkboxAlcohol = document.querySelector("#checkbox-alcohol")
+const checkboxNoAlcohol = document.querySelector("#checkbox-no-alcohol")
+const checkboxAll = document.querySelector("#checkbox-all")
 
 
 // Funciones
@@ -84,6 +89,7 @@ const htmlTarjetaTrago = (data) => {
     botonVolver.onclick = () => {
      contenedorTarjetaTrago.style.display = "none"
      contenedorPrincipalTarjetas.style.display = "block"
+     armarInicio()
     }
 }
 
@@ -110,6 +116,16 @@ formularioBusquedaNombre.onsubmit = (e) => {
     console.log(data.drinks)
     htmlConjuntoTarjetas(data.drinks)
     })
+
+    botonVolverDeBusqueda.style.display = "block"
+    inputBusquedaNombre.value = ""
+    inputBusquedaIngrediente.value = ""
+    
+}
+
+botonVolverDeBusqueda.onclick = () => {
+    armarInicio()
+    botonVolverDeBusqueda.style.display = "none"
 }
 
 
@@ -123,6 +139,10 @@ formularioBusquedaIngrediente.onsubmit = (e) => {
     console.log(data.drinks)
     htmlConjuntoTarjetas(data.drinks)
     })
+
+    botonVolverDeBusqueda.style.display = "block"
+    inputBusquedaIngrediente.value = ""
+    inputBusquedaNombre.value = ""
 }
 
 botonTragoAleatorio.onclick = () => {
@@ -133,3 +153,31 @@ botonTragoAleatorio.onclick = () => {
     mostrarTrago(data.drinks[0].idDrink)
     })
 }
+
+
+checkboxAlcohol.onchange = () => {
+    if (checkboxAlcohol.checked) {
+            fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
+            .then((res) =>  res.json())
+            .then((data) => {
+                htmlConjuntoTarjetas(data.drinks)
+            })
+            }
+    else {
+        armarInicio
+    }
+}
+
+checkboxNoAlcohol.onchange = () => {
+    if (checkboxNoAlcohol.checked) {
+            fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic")
+            .then((res) =>  res.json())
+            .then((data) => {
+                htmlConjuntoTarjetas(data.drinks)
+            })
+            }
+    else {
+        armarInicio()
+    }
+}
+
