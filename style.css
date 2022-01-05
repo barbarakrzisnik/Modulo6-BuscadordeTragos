@@ -37,3 +37,7 @@ header {
     display: flex;
     justify-content: center;
 }
+
+#volver-de-busqueda {
+    display: none;
+}
