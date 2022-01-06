@@ -1,0 +1,22 @@
+{
+  "name": "buscador-de-tragos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barbarakrzisnik/Modulo6-BuscadordeTragos.git"
+  },
+  "author": "Barbara Krzisnik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barbarakrzisnik/Modulo6-BuscadordeTragos/issues"
+  },
+  "homepage": "https://github.com/barbarakrzisnik/Modulo6-BuscadordeTragos#readme",
+  "dependencies": {
+    "sass": "^1.45.2"
+  }
+}
