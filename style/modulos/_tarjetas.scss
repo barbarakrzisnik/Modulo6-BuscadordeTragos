@@ -1,3 +1,33 @@
 .contenedor-conjunto-tarjetas {
-    @include centrado($)
+    margin: $margenes-largo;
+    width: 80%;
+    background-color: $color-principal;
+    margin: 50px;
+    @include centrado($direction: row);
+    flex-wrap: wrap;
+
+}
+
+.tarjeta {
+    width: 20%;
+    padding: 10px;
+    margin: 30px;
+    background-color: $color-secundario;
+    color: white;
+    h2 {
+        font-size: smaller;
+    }
+    @include centrado($direction: column);
+    .imagen-tarjeta {
+        margin: $margenes-largo;
+        width: 70%;
+        img {
+            width: 100%;
+            overflow: auto;
+        }
+    }
+    button {
+        @include boton($color: $color-secundario)
+    }
+
 }

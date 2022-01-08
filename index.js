@@ -35,8 +35,8 @@ const htmlConjuntoTarjetas = (data) => {
     const html = data.reduce((acc, curr) => {
        return acc + `
            <div class="tarjeta">
-               <h2>${curr.strDrink}</h2>
                <div class="imagen-tarjeta"><img src="${curr.strDrinkThumb}"></div>
+               <h2>${curr.strDrink}</h2>
                <button class="boton-ver-mas" data-id=${curr.idDrink}>More info</button>
            </div>
        `

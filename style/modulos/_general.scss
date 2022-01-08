@@ -14,3 +14,7 @@ body{
     font-family: $tipografia-principal;
     @include centrado($direction: column)
 }
+
+main {
+    @include centrado($direction: column)
+}

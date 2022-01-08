@@ -75,4 +75,55 @@ body {
   align-items: center;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-conjunto-tarjetas {
+  margin: 10px;
+  width: 80%;
+  background-color: #6B8B89;
+  margin: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tarjeta {
+  width: 20%;
+  padding: 10px;
+  margin: 30px;
+  background-color: #1B3134;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tarjeta h2 {
+  font-size: smaller;
+}
+.tarjeta .imagen-tarjeta {
+  margin: 10px;
+  width: 70%;
+}
+.tarjeta .imagen-tarjeta img {
+  width: 100%;
+  overflow: auto;
+}
+.tarjeta button {
+  border: none;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 5px;
+  color: white;
+  background-color: #1B3134;
+}
+
 /*# sourceMappingURL=style.css.map */
