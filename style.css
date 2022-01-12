@@ -55,6 +55,7 @@ nav #volver-de-busqueda {
 header {
   background-color: #6B8B89;
   color: #D2CECD;
+  padding-top: 20px;
   margin: 0%;
   margin-top: 40px;
   width: 80%;
@@ -97,7 +98,7 @@ main {
 .tarjeta {
   width: 20%;
   padding: 10px;
-  margin: 30px;
+  margin: 20px;
   background-color: #1B3134;
   color: white;
   display: flex;
@@ -106,13 +107,15 @@ main {
   align-items: center;
 }
 .tarjeta h2 {
+  margin: 0;
   font-size: smaller;
 }
 .tarjeta .imagen-tarjeta {
   margin: 10px;
-  width: 70%;
+  width: 90%;
 }
 .tarjeta .imagen-tarjeta img {
+  border-radius: 20px;
   width: 100%;
   overflow: auto;
 }

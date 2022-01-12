@@ -11,17 +11,19 @@
 .tarjeta {
     width: 20%;
     padding: 10px;
-    margin: 30px;
+    margin: 20px;
     background-color: $color-secundario;
     color: white;
     h2 {
+        margin: 0;
         font-size: smaller;
     }
     @include centrado($direction: column);
     .imagen-tarjeta {
         margin: $margenes-largo;
-        width: 70%;
+        width: 90%;
         img {
+            border-radius: 20px;
             width: 100%;
             overflow: auto;
         }
