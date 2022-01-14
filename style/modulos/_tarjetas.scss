@@ -1,8 +1,9 @@
 .contenedor-conjunto-tarjetas {
     margin: $margenes-largo;
-    width: 80%;
+    width: 100%;
     background-color: $color-principal;
     margin: 50px;
+    padding-top: 50px;
     @include centrado($direction: row);
     flex-wrap: wrap;
 
@@ -38,7 +39,7 @@
     margin: $margenes-largo;
     width: 100%;
     background-color: $color-principal;
-    @include centrado($direction: row);
+    justify-content: center;
 }
 
 .tarjeta-info-trago {
@@ -47,10 +48,13 @@
     padding: 30px;
     margin: 30px;
     background-color: $color-secundario;
+    border-radius: 20px;
     @include centrado($direction: row);
     color: white;
     div {
         margin-left: 20px;
+        width: 80%;
+        height: 80%;
     }
     img {
         border-radius: 20px;

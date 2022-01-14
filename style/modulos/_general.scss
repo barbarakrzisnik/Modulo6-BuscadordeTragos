@@ -17,5 +17,6 @@ body{
 }
 
 main {
-    @include centrado($direction: column)
+    @include centrado($direction: column);
+    width: 80%;
 }

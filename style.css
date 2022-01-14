@@ -81,13 +81,15 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 80%;
 }
 
 .contenedor-conjunto-tarjetas {
   margin: 10px;
-  width: 80%;
+  width: 100%;
   background-color: #6B8B89;
   margin: 50px;
+  padding-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -133,10 +135,7 @@ main {
   margin: 10px;
   width: 100%;
   background-color: #6B8B89;
-  display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
 }
 
 .tarjeta-info-trago {
@@ -145,6 +144,7 @@ main {
   padding: 30px;
   margin: 30px;
   background-color: #1B3134;
+  border-radius: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -153,6 +153,8 @@ main {
 }
 .tarjeta-info-trago div {
   margin-left: 20px;
+  width: 80%;
+  height: 80%;
 }
 .tarjeta-info-trago img {
   border-radius: 20px;

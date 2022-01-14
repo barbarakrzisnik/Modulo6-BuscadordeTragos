@@ -59,7 +59,7 @@ const botonVerMas = () => {
 
 const htmlTarjetaTrago = (data) => {
 
-    contenedorTarjetaTrago.style.display = "block"
+    contenedorTarjetaTrago.style.display = "flex"
     console.log(data)
     const html = `
         <div class="tarjeta-info-trago">
