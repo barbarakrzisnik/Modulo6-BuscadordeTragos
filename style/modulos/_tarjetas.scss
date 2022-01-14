@@ -1,0 +1,60 @@
+.contenedor-conjunto-tarjetas {
+    margin: $margenes-largo;
+    width: 80%;
+    background-color: $color-principal;
+    margin: 50px;
+    @include centrado($direction: row);
+    flex-wrap: wrap;
+
+}
+
+.tarjeta {
+    width: 20%;
+    padding: 10px;
+    margin: 20px;
+    background-color: $color-secundario;
+    color: white;
+    h2 {
+        margin: 0;
+        font-size: smaller;
+    }
+    @include centrado($direction: column);
+    .imagen-tarjeta {
+        margin: $margenes-largo;
+        width: 90%;
+        img {
+            border-radius: 20px;
+            width: 100%;
+            overflow: auto;
+        }
+    }
+    button {
+        @include boton($color: $color-secundario)
+    }
+
+}
+
+.contenedor-tarjeta-trago {
+    margin: $margenes-largo;
+    width: 100%;
+    background-color: $color-principal;
+    @include centrado($direction: row);
+}
+
+.tarjeta-info-trago {
+    width: 80%;
+    height: 40%;
+    padding: 30px;
+    margin: 30px;
+    background-color: $color-secundario;
+    @include centrado($direction: row);
+    color: white;
+    div {
+        margin-left: 20px;
+    }
+    img {
+        border-radius: 20px;
+        width: 100%;
+        overflow: auto;
+    }
+}

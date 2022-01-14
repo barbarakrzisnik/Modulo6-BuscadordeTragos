@@ -1,0 +1,43 @@
+
+nav {
+    background-color: $color-principal;
+    width: 80%;
+    color: $color-secundario;
+    @include centrado($direction: column);
+
+        .barras-nav {
+            @include centrado($direction: row);
+            margin: $margenes-corto;
+
+            .formulario-filtro {
+                label {
+                    margin: $margenes-corto;
+                }
+                input {
+                    border-radius: 5px;
+                }
+            }
+
+            .barras-nav-formularios {
+                background-color: $color-fondo;
+                padding: 10px;
+                padding-left: 10px;
+                padding-top: 10px;
+                margin: $margenes-corto;
+                input {
+                    border: none;
+                    background-color: $color-principal;
+                }
+            };
+
+        }
+        
+    #boton-trago-aleatorio {
+        @include boton($color: $color-acento);
+        margin-bottom: 40px;
+    }
+    #volver-de-busqueda {
+        display: none;
+        @include boton($color: $color-secundario)
+    }
+}

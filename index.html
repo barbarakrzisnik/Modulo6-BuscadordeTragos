@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500&display=swap" rel="stylesheet">
     <title>Make ur drink</title>
 </head>
 <header>
@@ -12,22 +15,8 @@
 </header>
 <nav>
     <div class="barras-nav">
-        <form class="formulario-busqueda-nombre">
-            <label>Search by drink
-                <input type="text" id="input-busqueda-nombre">
-            </label>
-        </form>
-        <form class="formulario-busqueda-ingrediente">
-            <label>Search by ingredient
-                <input type="text" id="input-busqueda-ingrediente">
-            </label>
-        </form>
-    
-        <button id="boton-trago-aleatorio">Surprise me!</button>
-    </div>
-    <div class="barras-nav">
         <form class="formulario-filtro">
-            <label>Filter by Alcoholic
+            <label>Alcoholic
                 <input id="checkbox-alcohol" type="checkbox">
             </label>
             <label>Non-Alcoholic
@@ -37,6 +26,25 @@
                 <input id="checkbox-all" type="checkbox">
             </label>
         </form>
+    </div>
+    <div class="barras-nav">
+        <div class="barras-nav-formularios">
+            <form class="formulario-busqueda-nombre">
+                <label>Search by drink
+                    <input type="text" id="input-busqueda-nombre">
+                </label>
+            </form>
+        </div>
+        <div class="barras-nav-formularios">
+        <form class="formulario-busqueda-ingrediente">
+            <label>Search by ingredient
+                <input type="text" id="input-busqueda-ingrediente">
+            </label>
+        </form>
+        </div>
+    </div>
+    <div>
+        <button id="boton-trago-aleatorio">Surprise me!</button>
     </div>
     <div>
         <button id="volver-de-busqueda">Go back</button>

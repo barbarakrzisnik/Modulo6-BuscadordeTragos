@@ -1,0 +1,16 @@
+@mixin centrado($direction: column) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin boton($color: $color-principal) {
+    border: none;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: $margenes-corto;
+    color: white;
+    background-color: $color;
+}
