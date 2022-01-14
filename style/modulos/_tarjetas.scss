@@ -33,3 +33,28 @@
     }
 
 }
+
+.contenedor-tarjeta-trago {
+    margin: $margenes-largo;
+    width: 100%;
+    background-color: $color-principal;
+    @include centrado($direction: row);
+}
+
+.tarjeta-info-trago {
+    width: 80%;
+    height: 40%;
+    padding: 30px;
+    margin: 30px;
+    background-color: $color-secundario;
+    @include centrado($direction: row);
+    color: white;
+    div {
+        margin-left: 20px;
+    }
+    img {
+        border-radius: 20px;
+        width: 100%;
+        overflow: auto;
+    }
+}
