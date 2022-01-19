@@ -50,7 +50,6 @@ const botonVerMas = () => {
     for (let i = 0; i < botonesVerMas.length; i++) {
         botonesVerMas[i].onclick = () => {
        const idTrago = botonesVerMas[i].dataset.id
-       console.log(idTrago)
        mostrarTrago(idTrago)
 }}}
 
@@ -88,7 +87,7 @@ const htmlTarjetaTrago = (data) => {
 
     botonVolver.onclick = () => {
      contenedorTarjetaTrago.style.display = "none"
-     contenedorPrincipalTarjetas.style.display = "block"
+     contenedorPrincipalTarjetas.style.display = "flex"
      armarInicio()
     }
 }

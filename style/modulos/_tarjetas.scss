@@ -51,6 +51,11 @@
     border-radius: 20px;
     @include centrado($direction: row);
     color: white;
+    h2 {
+        background-color: $color-acento;
+        padding: $margenes-corto;
+        padding-left: $margenes-largo;
+    }
     div {
         margin-left: 20px;
         width: 80%;
@@ -60,5 +65,8 @@
         border-radius: 20px;
         width: 100%;
         overflow: auto;
+    }
+    button {
+        @include boton($color: $color-acento)
     }
 }

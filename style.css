@@ -151,6 +151,11 @@ main {
   align-items: center;
   color: white;
 }
+.tarjeta-info-trago h2 {
+  background-color: #CA6360;
+  padding: 5px;
+  padding-left: 10px;
+}
 .tarjeta-info-trago div {
   margin-left: 20px;
   width: 80%;
@@ -160,6 +165,15 @@ main {
   border-radius: 20px;
   width: 100%;
   overflow: auto;
+}
+.tarjeta-info-trago button {
+  border: none;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 5px;
+  color: white;
+  background-color: #CA6360;
 }
 
 /*# sourceMappingURL=style.css.map */
