@@ -5,6 +5,7 @@ const contenedorTarjetaTrago = document.querySelector(".contenedor-tarjeta-trago
 const formularioBusquedaNombre = document.querySelector(".formulario-busqueda-nombre")
 const formularioBusquedaIngrediente = document.querySelector(".formulario-busqueda-ingrediente")
 const formularioFiltro = document.querySelector(".formulario-filtro")
+const contenedorSinResultado = document.querySelector(".contenedor-sin-resultados")
 
 const inputBusquedaNombre = document.querySelector("#input-busqueda-nombre")
 const inputBusquedaIngrediente = document.querySelector("#input-busqueda-ingrediente")
@@ -14,6 +15,8 @@ const botonVolverDeBusqueda = document.querySelector("#volver-de-busqueda")
 const checkboxAlcohol = document.querySelector("#checkbox-alcohol")
 const checkboxNoAlcohol = document.querySelector("#checkbox-no-alcohol")
 const checkboxAll = document.querySelector("#checkbox-all")
+
+const botonHome = document.querySelector(".boton-home")
 
 
 // Funciones
@@ -26,6 +29,7 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
 .then((data) => {
     console.log(data.drinks)
     htmlConjuntoTarjetas(data.drinks)
+    formularioFiltro.style.display="block"
 })
 }
 armarInicio()
@@ -100,6 +104,7 @@ const mostrarTrago = (id) => {
     .then((data) => {
     console.log(data)
     htmlTarjetaTrago(data.drinks[0])
+    formularioFiltro.style.display="none"
     })
 }
 
@@ -112,11 +117,20 @@ formularioBusquedaNombre.onsubmit = (e) => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputBusquedaNombre.value}`)
     .then((res) =>  res.json())
     .then((data) => {
-    console.log(data.drinks)
-    htmlConjuntoTarjetas(data.drinks)
+        if(data.drinks != null) {
+            console.log(data.drinks)
+            htmlConjuntoTarjetas(data.drinks)
+            contenedorSinResultado.style.display = "none"
+        }
+        else {
+            contenedorSinResultado.style.display = "block"
+            contenedorPrincipalTarjetas.style.display = "none"
+        }
     })
 
-    botonVolverDeBusqueda.style.display = "block"
+    contenedorTarjetaTrago.style.display = "none"
+    contenedorPrincipalTarjetas.style.display = "flex"
+    formularioFiltro.style.display="block"
     inputBusquedaNombre.value = ""
     inputBusquedaIngrediente.value = ""
     
@@ -132,14 +146,26 @@ botonVolverDeBusqueda.onclick = () => {
 formularioBusquedaIngrediente.onsubmit = (e) => {
     e.preventDefault()
 
+    
+
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputBusquedaIngrediente.value}`)
     .then((res) =>  res.json())
     .then((data) => {
-    console.log(data.drinks)
-    htmlConjuntoTarjetas(data.drinks)
+    if(data.drinks != null) {
+        console.log(data.drinks)
+        htmlConjuntoTarjetas(data.drinks)
+        contenedorSinResultado.style.display = "none"
+    }
+    else {
+        contenedorSinResultado.style.display = "block"
+        contenedorPrincipalTarjetas.style.display = "none"
+    }
+    
     })
 
-    botonVolverDeBusqueda.style.display = "block"
+    contenedorTarjetaTrago.style.display = "none"
+    contenedorPrincipalTarjetas.style.display = "flex"
+    formularioFiltro.style.display="block"
     inputBusquedaIngrediente.value = ""
     inputBusquedaNombre.value = ""
 }
@@ -180,3 +206,9 @@ checkboxNoAlcohol.onchange = () => {
     }
 }
 
+
+botonHome.onclick = () => {
+    contenedorTarjetaTrago.style.display = "none"
+    contenedorPrincipalTarjetas.style.display = "flex"
+    armarInicio()
+}
