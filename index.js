@@ -117,8 +117,15 @@ formularioBusquedaNombre.onsubmit = (e) => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputBusquedaNombre.value}`)
     .then((res) =>  res.json())
     .then((data) => {
-    console.log(data.drinks)
-    htmlConjuntoTarjetas(data.drinks)
+        if(data.drinks != null) {
+            console.log(data.drinks)
+            htmlConjuntoTarjetas(data.drinks)
+            contenedorSinResultado.style.display = "none"
+        }
+        else {
+            contenedorSinResultado.style.display = "block"
+            contenedorPrincipalTarjetas.style.display = "none"
+        }
     })
 
     contenedorTarjetaTrago.style.display = "none"
@@ -139,11 +146,21 @@ botonVolverDeBusqueda.onclick = () => {
 formularioBusquedaIngrediente.onsubmit = (e) => {
     e.preventDefault()
 
+    
+
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputBusquedaIngrediente.value}`)
     .then((res) =>  res.json())
     .then((data) => {
-    console.log(data.drinks)
-    htmlConjuntoTarjetas(data.drinks)
+    if(data.drinks != null) {
+        console.log(data.drinks)
+        htmlConjuntoTarjetas(data.drinks)
+        contenedorSinResultado.style.display = "none"
+    }
+    else {
+        contenedorSinResultado.style.display = "block"
+        contenedorPrincipalTarjetas.style.display = "none"
+    }
+    
     })
 
     contenedorTarjetaTrago.style.display = "none"
