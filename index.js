@@ -212,3 +212,7 @@ botonHome.onclick = () => {
     contenedorPrincipalTarjetas.style.display = "flex"
     armarInicio()
 }
+
+
+// Paginado
+
