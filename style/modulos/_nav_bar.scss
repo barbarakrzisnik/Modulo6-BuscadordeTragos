@@ -1,6 +1,6 @@
 
 nav {
-    background-color: $color-principal;
+    background-color: $color-secundario;
     width: 80%;
     color: $color-secundario;
     @include centrado($direction: column);
@@ -41,3 +41,5 @@ nav {
         @include boton($color: $color-secundario)
     }
 }
+
+
