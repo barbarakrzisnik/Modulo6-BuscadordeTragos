@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/barbarakrzisnik/Modulo6-BuscadordeTragos#readme",
   "dependencies": {
-    "sass": "^1.45.2"
+    "sass": "^1.49.0"
   }
 }
