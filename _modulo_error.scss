@@ -1,0 +1,18 @@
+.contenedor-sin-resultados {
+    display: none;
+    margin: $margenes-largo;
+    width: 100%;
+    background-color: $color-principal;
+    margin: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
+    div{
+        width: 100%;
+        @include centrado($direction: column);
+        button {
+            margin-bottom: 30px;
+            @include boton($color: $color-acento)
+        }
+    }
+}

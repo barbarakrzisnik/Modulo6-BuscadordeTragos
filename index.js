@@ -215,6 +215,7 @@ checkboxNoAlcohol.onchange = () => {
 botonHome.onclick = () => {
     contenedorTarjetaTrago.style.display = "none"
     contenedorPrincipalTarjetas.style.display = "flex"
+    contenedorSinResultado.style.display = "none"
     armarInicio(0)
 }
 

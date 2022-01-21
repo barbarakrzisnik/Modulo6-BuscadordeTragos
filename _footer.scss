@@ -1,4 +1,29 @@
 footer {
-    background-color: $color-secundario;
+    margin-top: 50px;
+    width: 100%;
+    background-color: $color-principal;
     color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    @include centrado($direction: column);
+
+    p{
+        background-color: $color-secundario;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    ul {
+        @include centrado($direction: row);
+        padding: 0px;
+        li{
+            list-style: none;
+            a{
+                color: white;
+                text-decoration: none;
+                margin: $margenes-corto;
+            }
+
+        }
+    }
 }
