@@ -18,21 +18,26 @@ const checkboxAll = document.querySelector("#checkbox-all")
 
 const botonHome = document.querySelector(".boton-home")
 
+const numeroPagina = document.querySelector(".numero-pagina")
+const prev = document.querySelector(".prev")
+const next = document.querySelector(".next")
+
 
 // Funciones
 
 // Tarjetas menu principal
 
-const armarInicio = () => {
+const armarInicio = (pagina) => {
 fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
 .then((res) =>  res.json())
 .then((data) => {
     console.log(data.drinks)
-    htmlConjuntoTarjetas(data.drinks)
+    arrayCortado = data.drinks.slice(pagina, pagina + 12)
+    htmlConjuntoTarjetas(arrayCortado)
     formularioFiltro.style.display="block"
 })
 }
-armarInicio()
+armarInicio(0)
 
 
 const htmlConjuntoTarjetas = (data) => {
@@ -92,7 +97,7 @@ const htmlTarjetaTrago = (data) => {
     botonVolver.onclick = () => {
      contenedorTarjetaTrago.style.display = "none"
      contenedorPrincipalTarjetas.style.display = "flex"
-     armarInicio()
+     armarInicio(0)
     }
 }
 
@@ -137,7 +142,7 @@ formularioBusquedaNombre.onsubmit = (e) => {
 }
 
 botonVolverDeBusqueda.onclick = () => {
-    armarInicio()
+    armarInicio(0)
     botonVolverDeBusqueda.style.display = "none"
 }
 
@@ -189,7 +194,7 @@ checkboxAlcohol.onchange = () => {
             })
             }
     else {
-        armarInicio
+        armarInicio(0)
     }
 }
 
@@ -202,7 +207,7 @@ checkboxNoAlcohol.onchange = () => {
             })
             }
     else {
-        armarInicio()
+        armarInicio(0)
     }
 }
 
@@ -210,5 +215,33 @@ checkboxNoAlcohol.onchange = () => {
 botonHome.onclick = () => {
     contenedorTarjetaTrago.style.display = "none"
     contenedorPrincipalTarjetas.style.display = "flex"
-    armarInicio()
+    armarInicio(0)
 }
+
+
+// Paginado
+
+let paginaActual = 0
+
+next.onclick = () => {
+    
+    paginaActual = paginaActual + 1
+    numeroPagina.textContent = `Page ${paginaActual}`
+    armarInicio(paginaActual * 10)
+    if(paginaActual === 9) {
+        next.disabled = true
+    }
+    
+}
+
+prev.onclick = () => {
+    paginaActual = paginaActual - 1
+    numeroPagina.textContent = `Page ${paginaActual}`
+    armarInicio(paginaActual * 10)
+    
+}
+
+
+
+
+
