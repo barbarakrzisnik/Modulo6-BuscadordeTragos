@@ -7,9 +7,15 @@ footer {
     padding-bottom: 50px;
     @include centrado($direction: column);
 
+    p{
+        background-color: $color-secundario;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
     ul {
         @include centrado($direction: row);
-        margin: 0px;
+        padding: 0px;
         li{
             list-style: none;
             a{
