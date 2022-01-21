@@ -12,7 +12,6 @@ const contenedorBotonesPaginado = document.querySelector(".contenedor-botones-pa
 const inputBusquedaNombre = document.querySelector("#input-busqueda-nombre")
 const inputBusquedaIngrediente = document.querySelector("#input-busqueda-ingrediente")
 const botonTragoAleatorio = document.querySelector("#boton-trago-aleatorio")
-const botonVolverDeBusqueda = document.querySelector("#volver-de-busqueda")
 
 const checkboxAlcohol = document.querySelector("#checkbox-alcohol")
 const checkboxNoAlcohol = document.querySelector("#checkbox-no-alcohol")
