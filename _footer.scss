@@ -1,9 +1,8 @@
 footer {
-    margin: $margenes-largo;
+    margin-top: 50px;
     width: 100%;
     background-color: $color-principal;
     color: white;
-    margin: 50px;
     padding-top: 50px;
     padding-bottom: 50px;
     @include centrado($direction: column);

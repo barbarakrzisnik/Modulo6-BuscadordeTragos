@@ -1,0 +1,7 @@
+.contenedor-botones-paginado {
+    @include centrado($direction: row);
+    button {
+        @include boton($color: $color-secundario);
+        margin: $margenes-largo;
+    }
+}
