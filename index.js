@@ -19,6 +19,8 @@ const checkboxAll = document.querySelector("#checkbox-all")
 
 const botonHome = document.querySelector(".boton-home")
 const botonError = document.querySelector(".boton-error")
+const botonDarkMode = document.querySelector("#boton-dark-mode")
+const bodyDarkMode = document.querySelector("body")
 
 const numeroPagina = document.querySelector(".numero-pagina")
 const prev = document.querySelector(".prev")
@@ -150,11 +152,6 @@ formularioBusquedaNombre.onsubmit = (e) => {
     
 }
 
-botonVolverDeBusqueda.onclick = () => {
-    armarInicio(0)
-    botonVolverDeBusqueda.style.display = "none"
-}
-
 
 
 formularioBusquedaIngrediente.onsubmit = (e) => {
@@ -260,6 +257,15 @@ prev.onclick = () => {
     numeroPagina.textContent = `Page ${paginaActual}`
     armarInicio(paginaActual * 10)
     
+}
+
+
+// Modo oscuro
+
+botonDarkMode.onclick = () => {
+    botonDarkMode.classList.toggle("dark-mode")
+    bodyDarkMode.classList.toggle("dark-mode")
+    prev.classList.toggle("dark-mode")
 }
 
 

@@ -6,7 +6,7 @@ header {
     margin-top: 40px;
     width: 80%;
     @include centrado($direction: column);
-}
+    }
 
 body{
     margin: 0;

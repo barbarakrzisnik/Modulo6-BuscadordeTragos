@@ -47,13 +47,15 @@ nav {
         margin: 0;
         display: flex;
         justify-content: flex-end;
-        button {
+        #boton-dark-mode {
             @include boton($color: $color-secundario);
             margin: 10px;
         } 
 }
 }
 
-.boton-light-mode {
-    @include boton($color: $color-acento);
+
+.dark-mode {
+    background-color: #1B3134;
+    color: white;
 }

@@ -57,7 +57,7 @@ nav .contenedor-dark-mode {
   display: flex;
   justify-content: flex-end;
 }
-nav .contenedor-dark-mode button {
+nav .contenedor-dark-mode #boton-dark-mode {
   border: none;
   padding: 10px;
   padding-left: 25px;
@@ -66,6 +66,11 @@ nav .contenedor-dark-mode button {
   color: white;
   background-color: #1B3134;
   margin: 10px;
+}
+
+.dark-mode {
+  background-color: #1B3134;
+  color: white;
 }
 
 header {
