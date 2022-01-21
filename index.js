@@ -6,6 +6,8 @@ const formularioBusquedaNombre = document.querySelector(".formulario-busqueda-no
 const formularioBusquedaIngrediente = document.querySelector(".formulario-busqueda-ingrediente")
 const formularioFiltro = document.querySelector(".formulario-filtro")
 const contenedorSinResultado = document.querySelector(".contenedor-sin-resultados")
+const contenedorBotonesPaginado = document.querySelector(".contenedor-botones-paginado")
+
 
 const inputBusquedaNombre = document.querySelector("#input-busqueda-nombre")
 const inputBusquedaIngrediente = document.querySelector("#input-busqueda-ingrediente")
@@ -17,6 +19,7 @@ const checkboxNoAlcohol = document.querySelector("#checkbox-no-alcohol")
 const checkboxAll = document.querySelector("#checkbox-all")
 
 const botonHome = document.querySelector(".boton-home")
+const botonError = document.querySelector(".boton-error")
 
 const numeroPagina = document.querySelector(".numero-pagina")
 const prev = document.querySelector(".prev")
@@ -97,12 +100,15 @@ const htmlTarjetaTrago = (data) => {
     botonVolver.onclick = () => {
      contenedorTarjetaTrago.style.display = "none"
      contenedorPrincipalTarjetas.style.display = "flex"
+     
+     contenedorBotonesPaginado.style.display = "flex"
      armarInicio(0)
     }
 }
 
 const mostrarTrago = (id) => {
     contenedorPrincipalTarjetas.style.display = "none"
+    contenedorBotonesPaginado.style.display = "none"
 
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
     .then((res) =>  res.json())
@@ -110,6 +116,7 @@ const mostrarTrago = (id) => {
     console.log(data)
     htmlTarjetaTrago(data.drinks[0])
     formularioFiltro.style.display="none"
+    contenedorSinResultado.style.display = "none"
     })
 }
 
@@ -126,15 +133,18 @@ formularioBusquedaNombre.onsubmit = (e) => {
             console.log(data.drinks)
             htmlConjuntoTarjetas(data.drinks)
             contenedorSinResultado.style.display = "none"
+            contenedorBotonesPaginado.style.display = "none"
         }
         else {
             contenedorSinResultado.style.display = "block"
             contenedorPrincipalTarjetas.style.display = "none"
+            contenedorBotonesPaginado.style.display = "none"
         }
     })
 
     contenedorTarjetaTrago.style.display = "none"
     contenedorPrincipalTarjetas.style.display = "flex"
+    contenedorBotonesPaginado.style.display = "flex"
     formularioFiltro.style.display="block"
     inputBusquedaNombre.value = ""
     inputBusquedaIngrediente.value = ""
@@ -160,16 +170,19 @@ formularioBusquedaIngrediente.onsubmit = (e) => {
         console.log(data.drinks)
         htmlConjuntoTarjetas(data.drinks)
         contenedorSinResultado.style.display = "none"
+        contenedorBotonesPaginado.style.display = "none"
     }
     else {
         contenedorSinResultado.style.display = "block"
         contenedorPrincipalTarjetas.style.display = "none"
+        contenedorBotonesPaginado.style.display = "none"
     }
     
     })
 
     contenedorTarjetaTrago.style.display = "none"
     contenedorPrincipalTarjetas.style.display = "flex"
+    contenedorBotonesPaginado.style.display = "flex"
     formularioFiltro.style.display="block"
     inputBusquedaIngrediente.value = ""
     inputBusquedaNombre.value = ""
@@ -215,6 +228,15 @@ checkboxNoAlcohol.onchange = () => {
 botonHome.onclick = () => {
     contenedorTarjetaTrago.style.display = "none"
     contenedorPrincipalTarjetas.style.display = "flex"
+    contenedorBotonesPaginado.style.display = "flex"
+    contenedorSinResultado.style.display = "none"
+    armarInicio(0)
+}
+
+botonError.onclick = () => {
+    contenedorTarjetaTrago.style.display = "none"
+    contenedorPrincipalTarjetas.style.display = "flex"
+    contenedorBotonesPaginado.style.display = "flex"
     contenedorSinResultado.style.display = "none"
     armarInicio(0)
 }
@@ -224,14 +246,13 @@ botonHome.onclick = () => {
 
 let paginaActual = 0
 
+
 next.onclick = () => {
     
     paginaActual = paginaActual + 1
     numeroPagina.textContent = `Page ${paginaActual}`
     armarInicio(paginaActual * 10)
-    if(paginaActual === 9) {
-        next.disabled = true
-    }
+    prev.disabled = false
     
 }
 
