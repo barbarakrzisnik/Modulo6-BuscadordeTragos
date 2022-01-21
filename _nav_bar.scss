@@ -34,12 +34,28 @@ nav {
         
     #boton-trago-aleatorio {
         @include boton($color: $color-acento);
-        margin-bottom: 40px;
+        margin: 0px;
     }
+
     #volver-de-busqueda {
         display: none;
         @include boton($color: $color-secundario)
     }
+
+    .contenedor-dark-mode{
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: flex-end;
+        #boton-dark-mode {
+            @include boton($color: $color-secundario);
+            margin: 10px;
+        } 
+}
 }
 
 
+.dark-mode {
+    background-color: #1B3134;
+    color: white;
+}

@@ -39,7 +39,7 @@ nav #boton-trago-aleatorio {
   margin: 5px;
   color: white;
   background-color: #CA6360;
-  margin-bottom: 40px;
+  margin: 0px;
 }
 nav #volver-de-busqueda {
   display: none;
@@ -50,6 +50,27 @@ nav #volver-de-busqueda {
   margin: 5px;
   color: white;
   background-color: #1B3134;
+}
+nav .contenedor-dark-mode {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+nav .contenedor-dark-mode #boton-dark-mode {
+  border: none;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 5px;
+  color: white;
+  background-color: #1B3134;
+  margin: 10px;
+}
+
+.dark-mode {
+  background-color: #1B3134;
+  color: white;
 }
 
 header {

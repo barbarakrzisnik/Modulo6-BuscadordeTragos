@@ -12,7 +12,6 @@ const contenedorBotonesPaginado = document.querySelector(".contenedor-botones-pa
 const inputBusquedaNombre = document.querySelector("#input-busqueda-nombre")
 const inputBusquedaIngrediente = document.querySelector("#input-busqueda-ingrediente")
 const botonTragoAleatorio = document.querySelector("#boton-trago-aleatorio")
-const botonVolverDeBusqueda = document.querySelector("#volver-de-busqueda")
 
 const checkboxAlcohol = document.querySelector("#checkbox-alcohol")
 const checkboxNoAlcohol = document.querySelector("#checkbox-no-alcohol")
@@ -20,6 +19,8 @@ const checkboxAll = document.querySelector("#checkbox-all")
 
 const botonHome = document.querySelector(".boton-home")
 const botonError = document.querySelector(".boton-error")
+const botonDarkMode = document.querySelector("#boton-dark-mode")
+const bodyDarkMode = document.querySelector("body")
 
 const numeroPagina = document.querySelector(".numero-pagina")
 const prev = document.querySelector(".prev")
@@ -151,11 +152,6 @@ formularioBusquedaNombre.onsubmit = (e) => {
     
 }
 
-botonVolverDeBusqueda.onclick = () => {
-    armarInicio(0)
-    botonVolverDeBusqueda.style.display = "none"
-}
-
 
 
 formularioBusquedaIngrediente.onsubmit = (e) => {
@@ -188,6 +184,8 @@ formularioBusquedaIngrediente.onsubmit = (e) => {
     inputBusquedaNombre.value = ""
 }
 
+// Botones navbar
+
 botonTragoAleatorio.onclick = () => {
   
     fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
@@ -197,6 +195,24 @@ botonTragoAleatorio.onclick = () => {
     })
 }
 
+botonHome.onclick = () => {
+    contenedorTarjetaTrago.style.display = "none"
+    contenedorPrincipalTarjetas.style.display = "flex"
+    contenedorBotonesPaginado.style.display = "flex"
+    contenedorSinResultado.style.display = "none"
+    armarInicio(0)
+}
+
+botonError.onclick = () => {
+    contenedorTarjetaTrago.style.display = "none"
+    contenedorPrincipalTarjetas.style.display = "flex"
+    contenedorBotonesPaginado.style.display = "flex"
+    contenedorSinResultado.style.display = "none"
+    armarInicio(0)
+}
+
+
+// Filtros 
 
 checkboxAlcohol.onchange = () => {
     if (checkboxAlcohol.checked) {
@@ -225,22 +241,6 @@ checkboxNoAlcohol.onchange = () => {
 }
 
 
-botonHome.onclick = () => {
-    contenedorTarjetaTrago.style.display = "none"
-    contenedorPrincipalTarjetas.style.display = "flex"
-    contenedorBotonesPaginado.style.display = "flex"
-    contenedorSinResultado.style.display = "none"
-    armarInicio(0)
-}
-
-botonError.onclick = () => {
-    contenedorTarjetaTrago.style.display = "none"
-    contenedorPrincipalTarjetas.style.display = "flex"
-    contenedorBotonesPaginado.style.display = "flex"
-    contenedorSinResultado.style.display = "none"
-    armarInicio(0)
-}
-
 
 // Paginado
 
@@ -261,6 +261,14 @@ prev.onclick = () => {
     numeroPagina.textContent = `Page ${paginaActual}`
     armarInicio(paginaActual * 10)
     
+}
+
+
+// Modo oscuro
+
+botonDarkMode.onclick = () => {
+    botonDarkMode.classList.toggle("dark-mode")
+    bodyDarkMode.classList.toggle("dark-mode")
 }
 
 
