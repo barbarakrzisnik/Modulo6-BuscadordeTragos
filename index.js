@@ -184,6 +184,8 @@ formularioBusquedaIngrediente.onsubmit = (e) => {
     inputBusquedaNombre.value = ""
 }
 
+// Botones navbar
+
 botonTragoAleatorio.onclick = () => {
   
     fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
@@ -193,6 +195,24 @@ botonTragoAleatorio.onclick = () => {
     })
 }
 
+botonHome.onclick = () => {
+    contenedorTarjetaTrago.style.display = "none"
+    contenedorPrincipalTarjetas.style.display = "flex"
+    contenedorBotonesPaginado.style.display = "flex"
+    contenedorSinResultado.style.display = "none"
+    armarInicio(0)
+}
+
+botonError.onclick = () => {
+    contenedorTarjetaTrago.style.display = "none"
+    contenedorPrincipalTarjetas.style.display = "flex"
+    contenedorBotonesPaginado.style.display = "flex"
+    contenedorSinResultado.style.display = "none"
+    armarInicio(0)
+}
+
+
+// Filtros 
 
 checkboxAlcohol.onchange = () => {
     if (checkboxAlcohol.checked) {
@@ -220,22 +240,6 @@ checkboxNoAlcohol.onchange = () => {
     }
 }
 
-
-botonHome.onclick = () => {
-    contenedorTarjetaTrago.style.display = "none"
-    contenedorPrincipalTarjetas.style.display = "flex"
-    contenedorBotonesPaginado.style.display = "flex"
-    contenedorSinResultado.style.display = "none"
-    armarInicio(0)
-}
-
-botonError.onclick = () => {
-    contenedorTarjetaTrago.style.display = "none"
-    contenedorPrincipalTarjetas.style.display = "flex"
-    contenedorBotonesPaginado.style.display = "flex"
-    contenedorSinResultado.style.display = "none"
-    armarInicio(0)
-}
 
 
 // Paginado
@@ -265,7 +269,6 @@ prev.onclick = () => {
 botonDarkMode.onclick = () => {
     botonDarkMode.classList.toggle("dark-mode")
     bodyDarkMode.classList.toggle("dark-mode")
-    prev.classList.toggle("dark-mode")
 }
 
 
