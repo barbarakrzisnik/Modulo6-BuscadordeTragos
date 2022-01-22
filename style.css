@@ -40,6 +40,15 @@ nav #boton-trago-aleatorio {
   color: white;
   background-color: #CA6360;
 }
+nav #boton-buscar {
+  border: none;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 5px;
+  color: white;
+  background-color: #CA6360;
+}
 nav #volver-de-busqueda {
   display: none;
   border: none;
@@ -82,14 +91,6 @@ nav .contenedor-dark-mode #boton-dark-mode {
   background-color: #CA6360;
 }
 
-@media (max-width: 992px) {
-  .barras-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
 header {
   background-color: #6B8B89;
   color: #D2CECD;
@@ -218,16 +219,6 @@ main {
   background-color: #CA6360;
 }
 
-@media (max-width: 992px) {
-  .tarjeta {
-    width: 40%;
-  }
-}
-@media (max-width: 800px) {
-  .tarjeta {
-    width: 100%;
-  }
-}
 footer {
   margin-top: 50px;
   width: 80%;

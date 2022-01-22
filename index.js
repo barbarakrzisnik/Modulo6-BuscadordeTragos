@@ -258,22 +258,23 @@ checkboxNoAlcohol.onchange = () => {
 
 let paginaActual = 0
 
+ next.onclick = () => {
 
-next.onclick = () => {
-    
-    paginaActual = paginaActual + 1
-    numeroPagina.textContent = `Page ${paginaActual}`
-    armarInicio(paginaActual * 10)
-    prev.disabled = false
-    
-}
+     paginaActual = paginaActual + 1
+     numeroPagina.textContent = `Page ${paginaActual + 1}`
+     armarInicio(paginaActual * 10)
+     if(paginaActual === 9) {
+         next.disabled = true
+     }
 
-prev.onclick = () => {
-    paginaActual = paginaActual - 1
-    numeroPagina.textContent = `Page ${paginaActual}`
-    armarInicio(paginaActual * 10)
-    
-}
+ }
+
+ prev.onclick = () => {
+     paginaActual = paginaActual - 1
+     numeroPagina.textContent = `Page ${paginaActual + 1}`
+     armarInicio(paginaActual * 10)
+
+ }
 
 
 // Modo oscuro
