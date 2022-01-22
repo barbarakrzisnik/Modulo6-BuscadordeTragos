@@ -1,6 +1,6 @@
 
 nav {
-    background-color: $color-secundario;
+    background-color: $color-principal;
     width: 80%;
     color: $color-secundario;
     @include centrado($direction: column);
@@ -31,11 +31,10 @@ nav {
             };
 
         }
-        
+    
     #boton-trago-aleatorio {
-        @include boton($color: $color-acento);
-        margin: 0px;
-    }
+        @include boton($color: $color-acento)
+    }    
 
     #volver-de-busqueda {
         display: none;
@@ -58,4 +57,16 @@ nav {
 .dark-mode {
     background-color: #1B3134;
     color: white;
+}
+
+.dark-mode-botones {
+    @include boton($color: $color-acento);
+}
+
+
+
+@media (max-width: 992px) { 
+    .barras-nav {
+        @include centrado($direction: column);
+    }
 }

@@ -1,197 +1,175 @@
 @import "import";
 
-nav {
-  background-color: #6B8B89;
-  width: 80%;
-  color: #1B3134;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+// nav {
+//   background-color: #6B8B89;
+//   width: 80%;
+//   color: #1B3134;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-nav .barras-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
-}
+// nav .barras-nav {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   margin: 5px;
+// }
 
-nav .barras-nav .formulario-filtro label {
-  margin: 5px;
-}
+// nav .barras-nav .formulario-filtro label {
+//   margin: 5px;
+// }
 
-nav .barras-nav .formulario-filtro input {
-  border-radius: 5px;
-}
+// nav .barras-nav .formulario-filtro input {
+//   border-radius: 5px;
+// }
 
-nav .barras-nav .barras-nav-formularios {
-  background-color: #D2CECD;
-  padding: 10px;
-  padding-left: 10px;
-  padding-top: 10px;
-  margin: 5px;
-}
+// nav .barras-nav .barras-nav-formularios {
+//   background-color: #D2CECD;
+//   padding: 10px;
+//   padding-left: 10px;
+//   padding-top: 10px;
+//   margin: 5px;
+// }
 
-nav .barras-nav .barras-nav-formularios input {
-  border: none;
-  background-color: #6B8B89;
-}
+// nav .barras-nav .barras-nav-formularios input {
+//   border: none;
+//   background-color: #6B8B89;
+// }
 
-nav #boton-trago-aleatorio {
-  border: none;
-  padding: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
-  margin: 5px;
-  color: white;
-  background-color: #CA6360;
-  margin-bottom: 40px;
-}
 
-nav #volver-de-busqueda {
-  display: none;
-  border: none;
-  padding: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
-  margin: 5px;
-  color: white;
-  background-color: #1B3134;
-}
 
-header {
-  background-color: #6B8B89;
-  color: #D2CECD;
-  padding-top: 20px;
-  margin: 0%;
-  margin-top: 40px;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+// nav #volver-de-busqueda {
+//   display: none;
+//   border: none;
+//   padding: 10px;
+//   padding-left: 25px;
+//   padding-right: 25px;
+//   margin: 5px;
+//   color: white;
+//   background-color: #1B3134;
+// }
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #D2CECD;
-  font-family: "Libre Franklin", sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+// header {
+//   background-color: #6B8B89;
+//   color: #D2CECD;
+//   padding-top: 20px;
+//   margin: 0%;
+//   margin-top: 40px;
+//   width: 80%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-}
+// body {
+//   margin: 0;
+//   padding: 0;
+//   background-color: #D2CECD;
+//   font-family: "Libre Franklin", sans-serif;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-.contenedor-conjunto-tarjetas {
-  margin: 10px;
-  width: 100%;
-  background-color: #6B8B89;
-  margin: 50px;
-  padding-top: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
+// main {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   width: 80%;
+// }
 
-.tarjeta {
-  width: 20%;
-  padding: 10px;
-  margin: 20px;
-  background-color: #1B3134;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+// .tarjeta {
+//   width: 20%;
+//   padding: 10px;
+//   margin: 20px;
+//   background-color: #1B3134;
+//   color: white;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-.tarjeta h2 {
-  margin: 0;
-  font-size: smaller;
-}
+// .tarjeta h2 {
+//   margin: 0;
+//   font-size: smaller;
+// }
 
-.tarjeta .imagen-tarjeta {
-  margin: 10px;
-  width: 90%;
-}
+// .tarjeta .imagen-tarjeta {
+//   margin: 10px;
+//   width: 90%;
+// }
 
-.tarjeta .imagen-tarjeta img {
-  border-radius: 20px;
-  width: 100%;
-  overflow: auto;
-}
+// .tarjeta .imagen-tarjeta img {
+//   border-radius: 20px;
+//   width: 100%;
+//   overflow: auto;
+// }
 
-.tarjeta button {
-  border: none;
-  padding: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
-  margin: 5px;
-  color: white;
-  background-color: #1B3134;
-}
+// .tarjeta button {
+//   border: none;
+//   padding: 10px;
+//   padding-left: 25px;
+//   padding-right: 25px;
+//   margin: 5px;
+//   color: white;
+//   background-color: #1B3134;
+// }
 
-.contenedor-tarjeta-trago {
-  margin: 10px;
-  width: 100%;
-  background-color: #6B8B89;
-  justify-content: center;
-}
+// .contenedor-tarjeta-trago {
+//   margin: 10px;
+//   width: 100%;
+//   background-color: #6B8B89;
+//   justify-content: center;
+// }
 
-.tarjeta-info-trago {
-  width: 80%;
-  height: 40%;
-  padding: 30px;
-  margin: 30px;
-  background-color: #1B3134;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
+// .tarjeta-info-trago {
+//   width: 80%;
+//   height: 40%;
+//   padding: 30px;
+//   margin: 30px;
+//   background-color: #1B3134;
+//   border-radius: 20px;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   color: white;
+// }
 
-.tarjeta-info-trago h2 {
-  background-color: #CA6360;
-  padding: 5px;
-  padding-left: 10px;
-}
+// .tarjeta-info-trago h2 {
+//   background-color: #CA6360;
+//   padding: 5px;
+//   padding-left: 10px;
+// }
 
-.tarjeta-info-trago div {
-  margin-left: 20px;
-  width: 80%;
-  height: 80%;
-}
+// .tarjeta-info-trago div {
+//   margin-left: 20px;
+//   width: 80%;
+//   height: 80%;
+// }
 
-.tarjeta-info-trago img {
-  border-radius: 20px;
-  width: 100%;
-  overflow: auto;
-}
+// .tarjeta-info-trago img {
+//   border-radius: 20px;
+//   width: 100%;
+//   overflow: auto;
+// }
 
-.tarjeta-info-trago button {
-  border: none;
-  padding: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
-  margin: 5px;
-  color: white;
-  background-color: #CA6360;
-}
+// .tarjeta-info-trago button {
+//   border: none;
+//   padding: 10px;
+//   padding-left: 25px;
+//   padding-right: 25px;
+//   margin: 5px;
+//   color: white;
+//   background-color: #CA6360;
+// }
 
 /*# sourceMappingURL=style.css.map */
 /*# sourceMappingURL=style.scss.map */
