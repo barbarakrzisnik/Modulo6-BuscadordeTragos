@@ -7,20 +7,22 @@ const formularioBusquedaIngrediente = document.querySelector(".formulario-busque
 const formularioFiltro = document.querySelector(".formulario-filtro")
 const contenedorSinResultado = document.querySelector(".contenedor-sin-resultados")
 const contenedorBotonesPaginado = document.querySelector(".contenedor-botones-paginado")
+const bodyDarkMode = document.querySelector("body")
 
 
 const inputBusquedaNombre = document.querySelector("#input-busqueda-nombre")
 const inputBusquedaIngrediente = document.querySelector("#input-busqueda-ingrediente")
-const botonTragoAleatorio = document.querySelector("#boton-trago-aleatorio")
+
 
 const checkboxAlcohol = document.querySelector("#checkbox-alcohol")
 const checkboxNoAlcohol = document.querySelector("#checkbox-no-alcohol")
 const checkboxAll = document.querySelector("#checkbox-all")
 
+const botonTragoAleatorio = document.querySelector("#boton-trago-aleatorio")
 const botonHome = document.querySelector(".boton-home")
 const botonError = document.querySelector(".boton-error")
 const botonDarkMode = document.querySelector("#boton-dark-mode")
-const bodyDarkMode = document.querySelector("body")
+
 const botonBuscar = document.querySelector("#boton-buscar")
 
 
@@ -29,7 +31,7 @@ const prev = document.querySelector(".prev")
 const next = document.querySelector(".next")
 
 
-// Funciones
+///////////////// Funcionamiento
 
 // Tarjetas menu principal
 
@@ -89,7 +91,7 @@ const htmlTarjetaTrago = (data) => {
                 </ul>
                 <h3>Instructions</h3>
                 <p>${data.strInstructions}</p>
-            <button class="boton-volver">Volver</button>
+            <button class="boton-volver">Go back</button>
             </div>
         </div>
     `
