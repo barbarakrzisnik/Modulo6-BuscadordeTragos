@@ -1,10 +1,7 @@
 
-@media (max-width: 992px) { 
-    .nav {
-        .barras-nav {
-            display: flex;
-            flex-direction: column;
-        }
+@media (max-width: 960px) { 
+    .barras-nav {
+        flex-direction: column;
     }
     .tarjeta {
         width: 40%;
@@ -20,8 +17,38 @@
 }
 
 @media (max-width: 800px) { 
+    .barras-nav {
+        .barras-nav-formularios {
+            label {
+                font-size: 15px;
+                @include centrado($direction: column);
+                input {
+                    width: 100%;
+                }
+            }
+        }
+    }
     .tarjeta {
         width: 100%;
+    }
+    .tarjeta-info-trago{
+        div{
+            width: 100%;
+            h2 {
+                font-size: 22px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            ul {
+                li {
+                    font-size: 15px;
+                }
+            }
+            p {
+                font-size: 15px;
+            }
+        }
         
     }
 }
