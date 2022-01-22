@@ -1,0 +1,28 @@
+
+@media (max-width: 992px) { 
+    .nav {
+        .barras-nav {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .tarjeta {
+        width: 40%;
+    }
+    .tarjeta-info-trago {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        div {
+            margin-left: 0px;
+        }
+    }
+}
+
+@media (max-width: 800px) { 
+    .tarjeta {
+        width: 100%;
+        
+    }
+}
+

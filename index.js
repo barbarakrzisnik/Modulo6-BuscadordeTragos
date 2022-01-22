@@ -21,6 +21,8 @@ const botonHome = document.querySelector(".boton-home")
 const botonError = document.querySelector(".boton-error")
 const botonDarkMode = document.querySelector("#boton-dark-mode")
 const bodyDarkMode = document.querySelector("body")
+const botonBuscar = document.querySelector("#boton-buscar")
+
 
 const numeroPagina = document.querySelector(".numero-pagina")
 const prev = document.querySelector(".prev")
@@ -38,7 +40,7 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
     console.log(data.drinks)
     arrayCortado = data.drinks.slice(pagina, pagina + 12)
     htmlConjuntoTarjetas(arrayCortado)
-    formularioFiltro.style.display="block"
+    formularioFiltro.style.display="flex"
 })
 }
 armarInicio(0)
@@ -152,13 +154,7 @@ formularioBusquedaNombre.onsubmit = (e) => {
     
 }
 
-
-
-formularioBusquedaIngrediente.onsubmit = (e) => {
-    e.preventDefault()
-
-    
-
+const buscarIngrediente = () => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputBusquedaIngrediente.value}`)
     .then((res) =>  res.json())
     .then((data) => {
@@ -179,9 +175,19 @@ formularioBusquedaIngrediente.onsubmit = (e) => {
     contenedorTarjetaTrago.style.display = "none"
     contenedorPrincipalTarjetas.style.display = "flex"
     contenedorBotonesPaginado.style.display = "flex"
-    formularioFiltro.style.display="block"
+    formularioFiltro.style.display="flex"
     inputBusquedaIngrediente.value = ""
     inputBusquedaNombre.value = ""
+}
+
+formularioBusquedaIngrediente.onsubmit = (e) => {
+    e.preventDefault()
+    buscarIngrediente()
+}
+
+botonBuscar.onclick = (e) => {
+    e.preventDefault()
+    buscarIngrediente()
 }
 
 // Botones navbar
@@ -267,7 +273,7 @@ prev.onclick = () => {
 // Modo oscuro
 
 botonDarkMode.onclick = () => {
-    botonDarkMode.classList.toggle("dark-mode")
+    botonDarkMode.classList.toggle("dark-mode-botones")
     bodyDarkMode.classList.toggle("dark-mode")
 }
 
