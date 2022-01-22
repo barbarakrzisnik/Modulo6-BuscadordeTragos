@@ -51,7 +51,7 @@ const htmlConjuntoTarjetas = (data) => {
     const html = data.reduce((acc, curr) => {
        return acc + `
            <div class="tarjeta">
-               <div class="imagen-tarjeta"><img src="${curr.strDrinkThumb}"></div>
+               <div class="imagen-tarjeta"><img src="${curr.strDrinkThumb}" alt="Drink image"></div>
                <h2>${curr.strDrink}</h2>
                <button class="boton-ver-mas" data-id=${curr.idDrink}>More info</button>
            </div>
@@ -77,7 +77,7 @@ const htmlTarjetaTrago = (data) => {
     contenedorTarjetaTrago.style.display = "flex"
     const html = `
         <div class="tarjeta-info-trago">
-            <img src="${data.strDrinkThumb}">
+            <img src="${data.strDrinkThumb}" alt="Drink image">
             <div>
                 <h2>${data.strDrink}</h2>
                 <h3>Category: ${data.strCategory}</h3>
@@ -91,7 +91,7 @@ const htmlTarjetaTrago = (data) => {
                 </ul>
                 <h3>Instructions</h3>
                 <p>${data.strInstructions}</p>
-            <button class="boton-volver">Go back</button>
+            <button class="boton-volver" aria-label="Go back to homepage">Go back</button>
             </div>
         </div>
     `
