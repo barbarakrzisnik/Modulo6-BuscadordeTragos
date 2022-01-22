@@ -3,7 +3,7 @@
 <img src="./img/Asset 4.png">  
   
 
-Hola! Este es un proyecto realizado con Javascript utilizando una API. 
+Hola! Este es un proyecto realizado con Javascript utilizando la API rest [TheCocktailDB](https://www.thecocktaildb.com/api.php)
 
 En este sitio el usuario se encuentra con una lista de tragos ordenada alfabeticamente en tarjetas. Al clickear sobre una puede acceder a la información de cada trago: ingredientes, instrucciones, que tipo de vaso utilizar. 
 
@@ -21,7 +21,7 @@ ___
 
 👩‍💻 Este proyecto fue construido con las siguientes tecnologías:  
 
-<img src="./img/Asset 1.png"> <img src="./img/Asset 2.png">  <img src="./img/Asset 3.png">   
+<img src="./img/Asset 1.png"> <img src="./img/Asset 2.png">  <img src="./img/Asset 3.png">  <img src="./img/Asset 8.png">   
 
   
 <img src="./img/Asset 7.png">
