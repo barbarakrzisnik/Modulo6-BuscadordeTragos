@@ -37,7 +37,6 @@ const armarInicio = (pagina) => {
 fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
 .then((res) =>  res.json())
 .then((data) => {
-    console.log(data.drinks)
     arrayCortado = data.drinks.slice(pagina, pagina + 12)
     htmlConjuntoTarjetas(arrayCortado)
     formularioFiltro.style.display="flex"
@@ -74,7 +73,6 @@ const botonVerMas = () => {
 const htmlTarjetaTrago = (data) => {
 
     contenedorTarjetaTrago.style.display = "flex"
-    console.log(data)
     const html = `
         <div class="tarjeta-info-trago">
             <img src="${data.strDrinkThumb}">
@@ -116,7 +114,6 @@ const mostrarTrago = (id) => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
     .then((res) =>  res.json())
     .then((data) => {
-    console.log(data)
     htmlTarjetaTrago(data.drinks[0])
     formularioFiltro.style.display="none"
     contenedorSinResultado.style.display = "none"
@@ -131,7 +128,6 @@ const buscarTrago = () => {
     .then((res) =>  res.json())
     .then((data) => {
         if(data.drinks != null) {
-            console.log(data.drinks)
             htmlConjuntoTarjetas(data.drinks)
             contenedorSinResultado.style.display = "none"
             contenedorBotonesPaginado.style.display = "none"
@@ -158,7 +154,6 @@ const buscarIngrediente = () => {
     .then((res) =>  res.json())
     .then((data) => {
     if(data.drinks != null) {
-        console.log(data.drinks)
         htmlConjuntoTarjetas(data.drinks)
         contenedorSinResultado.style.display = "none"
         contenedorBotonesPaginado.style.display = "none"
