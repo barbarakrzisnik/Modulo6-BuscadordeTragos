@@ -190,7 +190,7 @@ formularioBusquedaIngrediente.onsubmit = (e) => {
 botonBuscar.onclick = (e) => {
     e.preventDefault()
     buscarTrago()
-    buscarIngrediente()
+    buscarIngrediente() // No funciona buscar ingrediente a traves del boton search, solo on submit
 }
 
 // Botones navbar
