@@ -9,9 +9,6 @@ nav {
 }
 nav .barras-nav {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   margin: 5px;
 }
 nav .barras-nav .formulario-filtro label {
@@ -297,9 +294,8 @@ footer ul li a {
   background-color: #CA6360;
 }
 
-@media (max-width: 992px) {
-  .nav .barras-nav {
-    display: flex;
+@media (max-width: 960px) {
+  .barras-nav {
     flex-direction: column;
   }
 
@@ -317,8 +313,35 @@ footer ul li a {
   }
 }
 @media (max-width: 800px) {
+  .barras-nav .barras-nav-formularios label {
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .barras-nav .barras-nav-formularios label input {
+    width: 100%;
+  }
+
   .tarjeta {
     width: 100%;
+  }
+
+  .tarjeta-info-trago div {
+    width: 100%;
+  }
+  .tarjeta-info-trago div h2 {
+    font-size: 22px;
+  }
+  .tarjeta-info-trago div h3 {
+    font-size: 18px;
+  }
+  .tarjeta-info-trago div ul li {
+    font-size: 15px;
+  }
+  .tarjeta-info-trago div p {
+    font-size: 15px;
   }
 }
 /*# sourceMappingURL=style.css.map */

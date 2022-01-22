@@ -6,7 +6,7 @@ nav {
     @include centrado($direction: column);
 
         .barras-nav {
-            @include centrado($direction: row);
+            display: flex;
             margin: $margenes-corto;
 
             .formulario-filtro {
