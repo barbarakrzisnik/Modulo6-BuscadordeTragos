@@ -35,6 +35,10 @@ nav {
     #boton-trago-aleatorio {
         @include boton($color: $color-acento)
     }    
+    #boton-buscar {
+        @include boton($color: $color-acento)
+
+    }
 
     #volver-de-busqueda {
         display: none;
@@ -64,9 +68,3 @@ nav {
 }
 
 
-
-@media (max-width: 992px) { 
-    .barras-nav {
-        @include centrado($direction: column);
-    }
-}
