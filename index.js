@@ -126,33 +126,32 @@ const mostrarTrago = (id) => {
 
 // Formulario de busqueda
 
-// formularioBusquedaNombre.onsubmit = (e) => {
-//     e.preventDefault()
+const buscarTrago = () => {
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputBusquedaNombre.value}`)
+    .then((res) =>  res.json())
+    .then((data) => {
+        if(data.drinks != null) {
+            console.log(data.drinks)
+            htmlConjuntoTarjetas(data.drinks)
+            contenedorSinResultado.style.display = "none"
+            contenedorBotonesPaginado.style.display = "none"
+        }
+        else {
+            contenedorSinResultado.style.display = "block"
+            contenedorPrincipalTarjetas.style.display = "none"
+            contenedorBotonesPaginado.style.display = "none"
+        }
+    })
 
-//     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputBusquedaNombre.value}`)
-//     .then((res) =>  res.json())
-//     .then((data) => {
-//         if(data.drinks != null) {
-//             console.log(data.drinks)
-//             htmlConjuntoTarjetas(data.drinks)
-//             contenedorSinResultado.style.display = "none"
-//             contenedorBotonesPaginado.style.display = "none"
-//         }
-//         else {
-//             contenedorSinResultado.style.display = "block"
-//             contenedorPrincipalTarjetas.style.display = "none"
-//             contenedorBotonesPaginado.style.display = "none"
-//         }
-//     })
+    contenedorTarjetaTrago.style.display = "none"
+    contenedorPrincipalTarjetas.style.display = "flex"
+    contenedorBotonesPaginado.style.display = "flex"
+    formularioFiltro.style.display="flex"
+    inputBusquedaNombre.value = ""
+    inputBusquedaIngrediente.value = ""
 
-//     contenedorTarjetaTrago.style.display = "none"
-//     contenedorPrincipalTarjetas.style.display = "flex"
-//     contenedorBotonesPaginado.style.display = "flex"
-//     formularioFiltro.style.display="block"
-//     inputBusquedaNombre.value = ""
-//     inputBusquedaIngrediente.value = ""
-    
-// }
+}
+
 
 const buscarIngrediente = () => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputBusquedaIngrediente.value}`)
@@ -180,20 +179,21 @@ const buscarIngrediente = () => {
     inputBusquedaNombre.value = ""
 }
 
+formularioBusquedaNombre.onsubmit = (e) => {
+    e.preventDefault()
+    buscarTrago() 
+}
+
 formularioBusquedaIngrediente.onsubmit = (e) => {
     e.preventDefault()
-    buscarIngrediente(inputBusquedaIngrediente.value)
+    buscarIngrediente()
+    
 }
 
 botonBuscar.onclick = (e) => {
     e.preventDefault()
-    buscarIngrediente(inputBusquedaIngrediente.value)
-    buscarIngrediente(inputBusquedaNombre.value)
-}
-
-formularioBusquedaNombre.onsubmit = (e) => {
-        e.preventDefault()
-        buscarIngrediente(inputBusquedaNombre.value)
+    buscarTrago()
+    buscarIngrediente()
 }
 
 // Botones navbar

@@ -64,9 +64,3 @@ nav {
 }
 
 
-
-@media (max-width: 992px) { 
-    .barras-nav {
-        @include centrado($direction: column);
-    }
-}
