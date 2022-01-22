@@ -58,13 +58,5 @@ nav {
 }
 
 
-.dark-mode {
-    background-color: #1B3134;
-    color: white;
-}
-
-.dark-mode-botones {
-    @include boton($color: $color-acento);
-}
 
 

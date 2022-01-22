@@ -73,21 +73,6 @@ nav .contenedor-dark-mode #boton-dark-mode {
   margin: 10px;
 }
 
-.dark-mode {
-  background-color: #1B3134;
-  color: white;
-}
-
-.dark-mode-botones {
-  border: none;
-  padding: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
-  margin: 5px;
-  color: white;
-  background-color: #CA6360;
-}
-
 header {
   background-color: #6B8B89;
   color: #D2CECD;
@@ -118,6 +103,21 @@ main {
   justify-content: center;
   align-items: center;
   width: 80%;
+}
+
+.dark-mode {
+  background-color: #1B3134;
+  color: white;
+}
+
+.dark-mode-botones {
+  border: none;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 5px;
+  color: white;
+  background-color: #CA6360;
 }
 
 .contenedor-conjunto-tarjetas {
