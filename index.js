@@ -16,6 +16,7 @@ const inputBusquedaIngrediente = document.querySelector("#input-busqueda-ingredi
 
 const checkboxAlcohol = document.querySelector("#checkbox-alcohol")
 const checkboxNoAlcohol = document.querySelector("#checkbox-no-alcohol")
+// Esta variable nunca se usa
 const checkboxAll = document.querySelector("#checkbox-all")
 
 const botonTragoAleatorio = document.querySelector("#boton-trago-aleatorio")
@@ -39,16 +40,22 @@ const armarInicio = (pagina) => {
 fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
 .then((res) =>  res.json())
 .then((data) => {
+    // falta un const aqui
     arrayCortado = data.drinks.slice(pagina, pagina + 12)
     htmlConjuntoTarjetas(arrayCortado)
     formularioFiltro.style.display="flex"
 })
 }
+
+  // Todo el codigo que se ejecuta apenas carga la pagina, ponelo al final de todo
+  // Asi es mas facil entender el flujo de ejecución
 armarInicio(0)
 
 
 const htmlConjuntoTarjetas = (data) => {
     const html = data.reduce((acc, curr) => {
+        // Agrega el titulo del trago al alt de la imagen asi es mas claro aun . No es necesario 
+        // aclarar que es una imagen (eso ya lo hace el lector de pantalla)
        return acc + `
            <div class="tarjeta">
                <div class="imagen-tarjeta"><img src="${curr.strDrinkThumb}" alt="Drink image"></div>
@@ -73,6 +80,30 @@ const botonVerMas = () => {
 // Tarjeta individual
 
 const htmlTarjetaTrago = (data) => {
+    console.log(data)
+// La API aca es totalmente ridicula y deberia devolverte un array. De eso no hay discusión.
+// Pero lo que no me convence de esto es que cuando son diez ingredientes, no se muestran, porque 
+// solo tenes lugar para 4. Y si son solo dos, vemos "null" en la web
+// Podemos crear una funcion que recorra y retorne los ingredientes correctamente, y ejecutarla
+// debajo del h3:
+// const showIngredients = (data) => {
+//     const ingredients = [
+//         data.strIngredient1, data.strIngredient2, data.strIngredient3, 
+//         data.strIngredient4, data.strIngredient5, data.strIngredient6,
+//         data.strIngredient7, data.strIngredient8, data.strIngredient9,
+//         data.strIngredient10, data.strIngredient11, data.strIngredient12,
+//         data.strIngredient13, data.strIngredient14, data.strIngredient15
+//     ]
+//     const html = ""
+//     for (let i = 0; i < ingredients.length; i++) {
+//         if (ingredients[i]) {// si el ingrediente no es null
+//             html += `<li>${data.strIngredient[i]}</li>`
+//         }
+//     }
+//     return html
+// } 
+// Y luego en el html lo ejecutas asi:
+// showIngredients(data)
 
     contenedorTarjetaTrago.style.display = "flex"
     const html = `
@@ -155,6 +186,8 @@ const buscarIngrediente = () => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputBusquedaIngrediente.value}`)
     .then((res) =>  res.json())
     .then((data) => {
+        // ojo con el tabulado aca
+        // se podria decir asi: if (data.drinks) {
     if(data.drinks != null) {
         htmlConjuntoTarjetas(data.drinks)
         contenedorSinResultado.style.display = "none"
@@ -188,8 +221,11 @@ formularioBusquedaIngrediente.onsubmit = (e) => {
 }
 
 botonBuscar.onclick = (e) => {
+    // no necesitas prevenir el default en un boton
     e.preventDefault()
     buscarTrago()
+    // porque el ingrediente esta vacio cuando se ejecuta la funcion buscarIngrediente
+    // tenes que obtener el value del campo en la funcion, no antes
     buscarIngrediente() // No funciona buscar ingrediente a traves del boton search, solo on submit
 }
 
@@ -252,7 +288,7 @@ checkboxNoAlcohol.onchange = () => {
 
 
 // Paginado
-
+// estas variables globales deben ir arriba de todo
 let paginaActual = 0
 
  next.onclick = () => {
